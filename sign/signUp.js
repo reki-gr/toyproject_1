@@ -1,7 +1,7 @@
 
 // Define variable
-    var signUpForm = document.signUpForm;
+    var signUpForm = document.querySelector('#signUpForm');
 // Sign Up Submit
 function signUpSubmit () {
-    signUpForm.submit();
+    signUpForm.submit(); 
 }
