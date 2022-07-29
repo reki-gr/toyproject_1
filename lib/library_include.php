@@ -23,8 +23,7 @@
         //I = &#73;
         //O = &#79;
         //U = &#85;
-        if ($textToFilter != null)
-        {
+        if ($textToFilter != null) {
             $textToFilter = str_replace('insert '	,'ins&#101rt ',$textToFilter);
             $textToFilter = str_replace('select '	,'s&#101lect ',$textToFilter);
             $textToFilter = str_replace('values'	,' valu&#101s',$textToFilter);
@@ -46,5 +45,29 @@
             return trim($filterInputOutput);
         }
 
+    }
+
+    function emailDomain ($inputName, $inputId=false, $inputClass=false) {
+        $domain = ['선택', 'naver.com', 'gmail.com', 'hanmail.net', '직접입력'];
+
+        $selectBox = '<select '.$inputName.$inputName.'>';
+        for($i = 0; $i < count($domain); $i++) {
+            $selectBox .= ' <option value='.$domain[$i].'>'.$domain[$i].'</option> ';
+        }
+        $selectBox .= '</select>';
+
+        return $selectBox;
+    }
+
+    function firstMobileNumber ($inputName, $inputId=false, $inputClass=false) {
+        $mobileNumber = ['010', '011', '016', '017', '019'];
+
+        $selectBox = '<select '.$inputName.$inputName.'>';
+        for($i = 0; $i < count($mobileNumber); $i++) {
+            $selectBox .= ' <option value='.$mobileNumber[$i].'>'.$mobileNumber[$i].'</option> ';
+        }
+        $selectBox .= '</select>';
+
+        return $selectBox;
     }
 ?>

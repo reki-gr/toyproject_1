@@ -12,5 +12,5 @@
 </body>
 </html>
 <script>
-    location.href = "/REKI/toyproject_1/main/main.php";
+    location.href = "/main/main.php";
 </script>

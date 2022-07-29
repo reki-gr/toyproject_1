@@ -15,13 +15,14 @@
         <input type="text" name="user_name" id="user_name" placeholder="이름" maxlength="6" required>
     </div>
     <div>
-        <input type="email" name="user_email" id="user_email" placeholder="이메일" required>
+        <?=emailDomain("name=user_email_1")?>
+        <input type="email" name="user_email_2" id="user_email_2" placeholder="이메일" required>
     </div>
     <div>
         <span class="user_phone">
-            <select name="user_phone_1" id="user_phone_1">
-                <option value=""></option>
-            </select>
+            <span id="user_phone_1">
+            <?=firstMobileNumber("name=user_phone_1")?>
+            </span>
             <input type="tel" name="user_phone_2" id="user_phone_2" placeholder="휴대폰 번호" required>
             <input type="tel" name="user_phone_3" id="user_phone_3" required>
         </span>
