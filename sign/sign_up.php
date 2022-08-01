@@ -15,8 +15,10 @@
         <input type="text" name="user_name" id="user_name" placeholder="이름" maxlength="6" required>
     </div>
     <div>
-        <?=emailDomain("name=user_email_1")?>
-        <input type="email" name="user_email_2" id="user_email_2" placeholder="이메일" required>
+        <input type="email" name="user_email_1" id="user_email_1" placeholder="이메일" required>
+        <span>@</span>
+        <?=emailDomain("name='email_domain'", "id='email_domain'")?>
+        <input type="email" name="user_email_2" id="user_email_2" placeholder="직접입력" required readonly disabled>
     </div>
     <div>
         <span class="user_phone">
@@ -32,6 +34,7 @@
     </div>
     <div>
         <button type="button" id="sign_up_submit" onclick="signUpSubmit();">가입하기</button>
+        <button type="button" id="history_back" onclick="javascript:history.back();">뒤로가기</button>
     </div>
 </form>
 

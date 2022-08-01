@@ -10,6 +10,7 @@
     mysqli_set_charset($connect, 'utf8mb4');
     $GLOBALS["connect"];
     include('../lib/mysql_utility.php');
+
     // MySQL Injection Block
     function updateSQ($textToFilter) {
         //a = &#97;
@@ -47,10 +48,11 @@
 
     }
 
+    // 이메일 도메인
     function emailDomain ($inputName, $inputId=false, $inputClass=false) {
         $domain = ['선택', 'naver.com', 'gmail.com', 'hanmail.net', '직접입력'];
 
-        $selectBox = '<select '.$inputName.$inputName.'>';
+        $selectBox = '<select '.$inputName.$inputId.$inputClass.' onchange="emailDirectInput();">';
         for($i = 0; $i < count($domain); $i++) {
             $selectBox .= ' <option value='.$domain[$i].'>'.$domain[$i].'</option> ';
         }
@@ -59,15 +61,39 @@
         return $selectBox;
     }
 
+    // 휴대폰 앞자리
     function firstMobileNumber ($inputName, $inputId=false, $inputClass=false) {
         $mobileNumber = ['010', '011', '016', '017', '019'];
 
-        $selectBox = '<select '.$inputName.$inputName.'>';
+        $selectBox = '<select '.$inputName.$inputId.$inputClass.'>';
         for($i = 0; $i < count($mobileNumber); $i++) {
             $selectBox .= ' <option value='.$mobileNumber[$i].'>'.$mobileNumber[$i].'</option> ';
         }
         $selectBox .= '</select>';
 
         return $selectBox;
+    }
+
+    // PHP 경고창 + 헤더 로케이션
+    function alertMsg($msg, $url="") {
+        global $HTTP_REFERER, $g_dir, $g_homepage_index;
+    
+        if ($url == "")
+        {
+            $url_go = "history.go(-1)";
+        }
+        elseif ($url == "close"){
+         $url_go = "window.close()";
+        }
+    
+        else{
+            $url_go = "document.location.href = '$url'";
+        }
+    
+        if ($msg != "")
+            echo "<script language='javascript'>alert('$msg');$url_go;</script>";
+        else
+            echo "<script language='javascript'>$url_go;</script>";
+        exit;
     }
 ?>
