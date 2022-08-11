@@ -1,13 +1,13 @@
 <?php
 
-    function sqliSelect ($fromTable, $firstQuery="*", $whereColumn="1=1", $subQuery=null) {
+    function sqliSelect ($fromTable, $whereColumn="1=1", $firstQuery="*", $subQuery=null) {
         global $connect;
 
         $sql        = " SELECT {$firstQuery} FROM {$fromTable} WHERE {$whereColumn} {$subQuery} ";
         $result     = mysqli_query($connect, $sql) or die(mysqli_error($connect));
         $row        = mysqli_fetch_assoc($result);
         
-        return $row;
+        // return $row;
     }
 
     function sqliInsert ($insertTable, $setData) {

@@ -1,30 +1,23 @@
+// Include regular expression
+    document.write('<script src="/js/regExp.js"></script>');
 
 // Define variable
     // Selector
-    var signUpForm      = document.querySelector('#signUpForm');
-    var emailDomain     = document.querySelector('#email_domain');
+    let signUpForm      = document.querySelector('#signUpForm');
+    let emailDomain     = document.querySelector('#email_domain');
 
-    var userId          = document.querySelector('#user_id');
-    var userPassWord    = document.querySelector('#user_password');
-    var userName        = document.querySelector('#user_name');
-    var userEmail_1     = document.querySelector('#user_email_1');
-    var userEmail_2     = document.querySelector('#user_email_2');
-    var userPhone_1     = document.querySelector('#user_phone_1');
-    var userPhone_2     = document.querySelector('#user_phone_2');
-    var userPhone_3     = document.querySelector('#user_phone_3');
-    var userCheck       = document.querySelector('#user_check');
-
-// Regular expression
-    var regExpId        = /^[a-z0-9_-]{4,20}$/;                                      // 영문 + 숫자 + 하이픈,언더바
-    var regExpPassWord  = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;    // 영문 + 숫자 + 특수문자
-    var regExpName      = /^[가-힣a-zA-Z]{2,15}$/;
-    var regExpEmail     = regExpId;
-    var regExpPhone     = /^(?=.*[0-9]).{4}$/;                                       // 숫자
+    let userId          = document.querySelector('#user_id');
+    let userPassWord    = document.querySelector('#user_password');
+    let userName        = document.querySelector('#user_name');
+    let userEmail_1     = document.querySelector('#user_email_1');
+    let userEmail_2     = document.querySelector('#user_email_2');
+    let userPhone_1     = document.querySelector('#user_phone_1');
+    let userPhone_2     = document.querySelector('#user_phone_2');
+    let userPhone_3     = document.querySelector('#user_phone_3');
+    let userCheck       = document.querySelector('#user_check');
 
 // Sign up submit
 function signUpSubmit () {
-    // Sign up regular expression
-
     // User id
     if (userId.value.trim() == "") {
         alert('아이디를 입력해주세요.');
@@ -101,19 +94,14 @@ function signUpSubmit () {
 
 // Domain auto input
 function emailDirectInput () {
-    var autoInput = emailDomain.value;
-    var domain = document.querySelector('#user_email_2');
-
-    if (autoInput == "직접입력") {
-        domain.removeAttribute('readonly');
-        domain.removeAttribute('disabled');
-        var domainAutoInput = domain.value = "";
+    if (emailDomain.value == "direct" || emailDomain.value == "") {
+        userEmail_2.removeAttribute('readonly');
+        userEmail_2.removeAttribute('disabled');
+        userEmail_2.value = "";
     } else {
-        domain.setAttribute('readonly', 'true');
-        domain.setAttribute('disabled', 'true');
-        var domainAutoInput = domain.value = autoInput;
+        userEmail_2.setAttribute('readonly', 'true');
+        userEmail_2.setAttribute('disabled', 'true');
+        userEmail_2.value = emailDomain.value;
     }
-    
-    return domainAutoInput;
 }
 

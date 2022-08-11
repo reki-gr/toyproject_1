@@ -50,11 +50,12 @@
 
     // 이메일 도메인
     function emailDomain ($inputName, $inputId=false, $inputClass=false) {
-        $domain = ['선택', 'naver.com', 'gmail.com', 'hanmail.net', '직접입력'];
+        $domain         = ['선택', 'naver.com', 'gmail.com', 'hanmail.net', '직접입력'];
+        $domainValue    = ['', 'naver.com', 'gmail.com', 'hanmail.net', 'direct'];
 
-        $selectBox = '<select '.$inputName.$inputId.$inputClass.' onchange="emailDirectInput();">';
+        $selectBox = '<select name="'.$inputName.'" id="'.$inputId.'" class="'.$inputClass.'" onchange="emailDirectInput();">';
         for($i = 0; $i < count($domain); $i++) {
-            $selectBox .= ' <option value='.$domain[$i].'>'.$domain[$i].'</option> ';
+                $selectBox .= ' <option value="'.$domainValue[$i].'">'.$domain[$i].'</option>';
         }
         $selectBox .= '</select>';
 
@@ -65,7 +66,7 @@
     function firstMobileNumber ($inputName, $inputId=false, $inputClass=false) {
         $mobileNumber = ['010', '011', '016', '017', '019'];
 
-        $selectBox = '<select '.$inputName.$inputId.$inputClass.'>';
+        $selectBox = '<select name="'.$inputName.'" id="'.$inputId.'" class="'.$inputClass.'">';
         for($i = 0; $i < count($mobileNumber); $i++) {
             $selectBox .= ' <option value='.$mobileNumber[$i].'>'.$mobileNumber[$i].'</option> ';
         }
