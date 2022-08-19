@@ -1,6 +1,9 @@
 <?php
     include $_SERVER["DOCUMENT_ROOT"]."/inc/head.php";
 ?>
+
+<script defer src="/js/signIn.js"></script>
+
 <h2>Sign In</h2>
 
 <form action="sign_in_ok.php" name="signInForm" id="signInForm" class="signInForm" method="POST">
@@ -20,7 +23,6 @@
     </div>
 </form>
 
-<script src="/js/signIn.js"></script>
 <?php
     include $_SERVER["DOCUMENT_ROOT"]."/inc/bottom.php";
 ?>

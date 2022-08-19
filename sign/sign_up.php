@@ -2,6 +2,8 @@
     include('../inc/head.php');
 ?>
 
+<script defer src="/js/signUp.js"></script>
+
 <h2>Sign Up</h2>
 
 <form action="sign_up_ok.php" name="signUpForm" id="signUpForm" method="POST" class="sign_up">
@@ -37,8 +39,6 @@
         <button type="button" id="history_back" onclick="javascript:history.back();">뒤로가기</button>
     </div>
 </form>
-
-<script src="/js/signUp.js"></script>
 
 <?php
     include('../inc/bottom.php');

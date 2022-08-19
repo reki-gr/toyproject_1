@@ -7,7 +7,7 @@
         $result     = mysqli_query($connect, $sql) or die(mysqli_error($connect));
         $row        = mysqli_fetch_assoc($result);
         
-        // return $row;
+        return $row;
     }
 
     function sqliInsert ($insertTable, $setData) {

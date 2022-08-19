@@ -6,8 +6,9 @@
         ${$key} = $val;
     }
 
-    $db = sqlSelect("tbl_member_list", $user_id);
+    $db = sqliSelect("tbl_member_list", $user_id);
     
     if (!empty($user_id) && !empty($user_password)) {
+        
     }
 ?>
