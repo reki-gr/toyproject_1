@@ -1,10 +1,10 @@
 <?php
-    echo "Utility";
+    // echo "Utility";
     
     $mysqli_host = "localhost";
-    $mysqli_user = "reki";
-    $mysqli_password = "1513";
-    $mysqli_db = "reki_project_1";
+    $mysqli_user = "root";
+    $mysqli_password = "";
+    $mysqli_db = "reki";
 
     $connect = mysqli_connect($mysqli_host, $mysqli_user, $mysqli_password, $mysqli_db);
     mysqli_set_charset($connect, 'utf8mb4');
